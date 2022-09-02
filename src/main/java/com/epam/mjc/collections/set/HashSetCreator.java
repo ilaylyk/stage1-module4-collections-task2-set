@@ -4,6 +4,17 @@ import java.util.HashSet;
 import java.util.List;
 
 public class HashSetCreator {
-    public HashSet<Integer> createHashSet(List<Integer> sourceList) {
+    public static HashSet<Integer> createHashSet(List<Integer> sourceList) {
+        HashSet<Integer> states = new HashSet<>();
+        for (Integer integer : sourceList) {
+            states.add(integer);
+            if (integer % 2 == 0) {
+                states.add(integer / 2);
+            } else {
+                states.add(integer);
+                states.add(integer * 2);
+            }
+        }
+        return states;
     }
 }
