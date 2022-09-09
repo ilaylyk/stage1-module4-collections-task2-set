@@ -8,11 +8,12 @@ public class HashSetCreator {
         HashSet<Integer> states = new HashSet<>();
         for (Integer integer : sourceList) {
             states.add(integer);
-            if (integer % 2 == 0) {
-                states.add(integer / 2);
-            } else {
-                states.add(integer);
+            if (x % 2 == 1) {
                 states.add(integer * 2);
+            } else {
+                while (integer % 2 == 0) {
+                    states.add(integer /= 2);
+                }
             }
         }
         return states;
